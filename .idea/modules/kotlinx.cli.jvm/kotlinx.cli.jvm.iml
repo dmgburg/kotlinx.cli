@@ -5,7 +5,6 @@
     <content url="file://$MODULE_DIR$/../../../kotlinx.cli.jvm">
       <excludeFolder url="file://$MODULE_DIR$/../../../kotlinx.cli.jvm/.gradle" />
       <excludeFolder url="file://$MODULE_DIR$/../../../kotlinx.cli.jvm/build" />
-      <excludeFolder url="file://$MODULE_DIR$/../../../kotlinx.cli.jvm/out" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

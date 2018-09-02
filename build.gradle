@@ -1,20 +1,29 @@
 buildscript {
-    ext.kotlin_version = '1.2-Beta-eap-14'
+    ext.kotlin_version = '1.2.61'
 
     repositories {
         mavenCentral()
         maven { url 'https://dl.bintray.com/kotlin/kotlin-dev' }
+        maven { url "https://dl.bintray.com/jetbrains/kotlin-native-dependencies" }
     }
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "org.jetbrains.kotlin:kotlin-native-gradle-plugin:0.8.2"
     }
 }
 
 apply plugin: 'kotlin-platform-common'
+apply plugin: 'konan'
+
+konan.targets = ['mingw_x64']
+
+konanArtifacts {
+    program('hello')
+}
 
 repositories {
     mavenCentral()
-    maven { url "http://dl.bintray.com/kotlin/kotlin-dev" }
+    maven { url 'https://dl.bintray.com/kotlin/kotlin-dev' }
 }
 
 dependencies {

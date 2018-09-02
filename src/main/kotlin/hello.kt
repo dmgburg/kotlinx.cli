@@ -1,7 +1,6 @@
-package kotlinx.cli.examples
+//package kotlinx.cli.examples
 
 import kotlinx.cli.*
-import kotlin.system.exitProcess
 
 fun main(args: Array<String>) {
     // Define commandName-line interface
@@ -15,16 +14,13 @@ fun main(args: Array<String>) {
     // Parse arguments or exit
     try {
         cli.parse(args)
-    }
-    catch (e: Exception) {
-        exitProcess(1)
-    }
+        val ints = integers.map { it.toInt(radix) }
+        println("Args: ${args.asList()}")
+        println("Integers: $ints")
+        if (sum) println("Sum: ${ints.sum()}")
+        if (max) println("Max: ${ints.max()}")
+        if (min) println("Min: ${ints.min()}")
+    } catch (e: Exception){
 
-    // Do something useful
-    val ints = integers.map { it.toInt(radix) }
-    println("Args: ${args.asList()}")
-    println("Integers: $ints")
-    if (sum) println("Sum: ${ints.sum()}")
-    if (max) println("Max: ${ints.max()}")
-    if (min) println("Min: ${ints.min()}")
+    }
 }
